@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/10/17 18:48:13 by rmaes         ########   odam.nl          #
+#    Updated: 2022/10/17 18:50:42 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,6 @@ SOURCES = $(addprefix $(SOURCES_DIR), $(FILES))
 OBJECTS = $(addprefix $(OBJECTS_DIR), $(FILES:.c=.o))
 PRINTF_OBJECTS = $(PRINTF_SOURCES:.c=.o)
 
-PRINTF_HEADER = $(addprefix $(PRINTF_DIR), ft_printf.h)
-HEADER = libft.h
-
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 NAME = libft.a
@@ -58,9 +55,5 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
-
-bonus: $(BONUS_OBJECTS) $(OBJECTS) $(HEADER) $(NAME)
-	@echo "adding bonus to $(NAME)"
-	@ar -rcsu $(NAME) $(OBJECTS)  $(BONUS_OBJECTS) 
 
 .PHONY: all clean fclean re bonus
