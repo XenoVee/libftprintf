@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/10/17 18:40:42 by rmaes         ########   odam.nl          #
+#    Updated: 2022/10/17 18:48:13 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) $(PRINTF_OBJECTS) $(HEADER) $(PRINTF_HEADER)
+$(NAME): $(OBJECTS) $(PRINTF_OBJECTS)
 	@echo archving $@
 	ar -rcsu $@ $^
 
