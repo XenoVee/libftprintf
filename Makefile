@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/10/17 18:38:11 by rmaes         ########   odam.nl          #
+#    Updated: 2022/10/17 18:40:42 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ PRINTF_FILES = ft_printf_utils.c ft_printf.c writes.c writes_2.c
 PRINTF_SOURCES = $(addprefix $(PRINTF_DIR), $(PRINTF_FILES))
 SOURCES = $(addprefix $(SOURCES_DIR), $(FILES))
 
-OBJECTS = $(addprefix $(OBJECTS_DIR), $(SOURCES:.c=.o))
+OBJECTS = $(addprefix $(OBJECTS_DIR), $(FILES:.c=.o))
 PRINTF_OBJECTS = $(PRINTF_SOURCES:.c=.o)
 
 PRINTF_HEADER = $(addprefix $(PRINTF_DIR), ft_printf.h)
@@ -45,7 +45,7 @@ $(NAME): $(OBJECTS) $(PRINTF_OBJECTS) $(HEADER) $(PRINTF_HEADER)
 	@echo archving $@
 	ar -rcsu $@ $^
 
-$(OBJECTS_DIR)%.o: %.c
+$(OBJECTS_DIR)%.o: $(SOURCES_DIR)%.c
 	@$(CC) -c $(CFLAGS) -o $@ $^
 
 $(PRINTF_DIR)%.o: $(PRINTF_DIR)%.c
