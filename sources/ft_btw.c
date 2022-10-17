@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 // make sure n is between d and i
 int	ft_btw(int n, int d, int i)
