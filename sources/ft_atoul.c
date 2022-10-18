@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:41:27 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/13 18:55:30 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/18 16:37:15 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,6 @@ int	ulonglen(void)
 	return (len);
 }
 
-static int	atoul_strcmp(const char	*str1, char *str2)
-{
-	int	i;
-	int	l;
-
-	l = ulonglen();
-	i = 0;
-	while (str1[i] == str2[i] && str1[i] && str2[i] && i <= l)
-		i++;
-	return (str2[i] - str1[i]);
-}
-
 static int	max_check(const char *str)
 {
 	int		i;
@@ -58,7 +46,7 @@ static int	max_check(const char *str)
 	else if (i == l)
 	{
 		s = ft_ultoa(ULONG_MAX);
-		ret = atoul_strcmp(str, s);
+		ret = strcmp(str, s);
 		free (s);
 	}
 	else if (i > l)
