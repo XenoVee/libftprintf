@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   writes.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rmaes <rmaes@student.codam.nl>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 17:04:38 by rmaes             #+#    #+#             */
-/*   Updated: 2022/08/10 15:00:05 by rmaes            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   writes.c                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/08/01 17:04:38 by rmaes         #+#    #+#                 */
+/*   Updated: 2022/10/18 17:04:40 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft.h"
 
 void	ft_puthexadecimal_count(unsigned int x, int cap, size_t *wrt)
 {
