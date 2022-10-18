@@ -6,11 +6,11 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/18 15:21:26 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/18 16:36:22 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/18 16:55:24 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *str1, char *str2)
+int	ft_strcmp(const char *str1, const char *str2)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:42:35 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/18 16:35:55 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/18 16:55:54 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ int				ft_max(int n, int d);
 int				ft_btw(int n, int d, int i);
 char			*ft_ultoa(unsigned long n);
 int				ft_printf(const char *content, ...);
-int				ft_strcmp(char *str1, char *str2);
+int				ft_strcmp(const char *str1, const char *str2);
 
 #endif
