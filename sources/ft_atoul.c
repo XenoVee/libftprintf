@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:41:27 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/18 16:37:15 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/18 16:38:46 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	max_check(const char *str)
 	else if (i == l)
 	{
 		s = ft_ultoa(ULONG_MAX);
-		ret = strcmp(str, s);
+		ret = ft_strcmp(str, s);
 		free (s);
 	}
 	else if (i > l)

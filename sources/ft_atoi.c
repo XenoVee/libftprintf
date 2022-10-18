@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:41:27 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/18 16:36:56 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/18 16:38:37 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ static int	max_check(const char *str, int sign)
 		ret = 0;
 	if (sign == 1 && i == 10)
 	{
-		if (strcmp(str, "2147483647") < 0)
+		if (ft_strcmp(str, "2147483647") < 0)
 			ret = -1;
 	}
 	if (sign == -1 && i == 10)
 	{
-		if (strcmp(str, "2147483648") < 0)
+		if (ft_strcmp(str, "2147483648") < 0)
 			ret = 0;
 	}
 	return (ret);
