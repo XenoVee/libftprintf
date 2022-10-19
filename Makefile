@@ -6,13 +6,14 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/10/17 18:50:42 by rmaes         ########   odam.nl          #
+#    Updated: 2022/10/19 16:20:02 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 OBJECTS_DIR = objects/
 SOURCES_DIR = sources/
 PRINTF_DIR = ft_printf/
+GNL_DIR = get_next_line/
 
 FILES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
@@ -25,12 +26,16 @@ FILES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 PRINTF_FILES = ft_printf_utils.c ft_printf.c writes.c writes_2.c
+GNL_FILES = get_next_line.c get_next_line_utils.c \
 
-PRINTF_SOURCES = $(addprefix $(PRINTF_DIR), $(PRINTF_FILES))
+
 SOURCES = $(addprefix $(SOURCES_DIR), $(FILES))
+PRINTF_SOURCES = $(addprefix $(PRINTF_DIR), $(PRINTF_FILES))
+GNL_SOURCES = $(addprefix $(GNL_DIR), $(GNL_FILES))
 
 OBJECTS = $(addprefix $(OBJECTS_DIR), $(FILES:.c=.o))
 PRINTF_OBJECTS = $(PRINTF_SOURCES:.c=.o)
+GNL_OBJECTS = $(GNL_SOURCES:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
@@ -38,7 +43,7 @@ NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) $(PRINTF_OBJECTS)
+$(NAME): $(OBJECTS) $(PRINTF_OBJECTS) $(GNL_OBJECTS)
 	@echo archving $@
 	ar -rcsu $@ $^
 
@@ -48,8 +53,11 @@ $(OBJECTS_DIR)%.o: $(SOURCES_DIR)%.c
 $(PRINTF_DIR)%.o: $(PRINTF_DIR)%.c
 	@$(CC) -c $(CFLAGS) -o $@ $^
 
+$(GNL_DIR)%.o: $(GNL_DIR)%.c
+	@$(CC) -c $(CFLAGS) -o $@ $^
+
 clean:
-	@rm -f $(OBJECTS) $(BONUS_OBJECTS) $(PRINTF_OBJECTS)
+	@rm -f $(OBJECTS) $(GNL_OBJECTS) $(PRINTF_OBJECTS)
 
 fclean: clean
 	@rm -f $(NAME)
