@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/10/20 16:39:33 by rmaes         ########   odam.nl          #
+#    Updated: 2022/10/20 18:40:48 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ FILES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 		ft_min.c ft_max.c ft_btw.c ft_is_atoi.c ft_abs.c ft_ultoa.c ft_atoul.c \
 		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_realloc.c
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_realloc.c \
+		ft_digitcount_signed.c ft_digitcount_unsigned.c ft_is_negative.c
 PRINTF_FILES = ft_printf_utils.c ft_printf.c writes.c writes_2.c
 GNL_FILES = get_next_line.c get_next_line_utils.c \
 

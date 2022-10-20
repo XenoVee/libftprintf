@@ -6,40 +6,12 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:41:37 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/13 16:28:49 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/20 18:42:58 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdlib.h>
-
-static int	digitcount(int n)
-{
-	int	i;
-
-	i = 0;
-	if (n >= 0)
-	{
-		while (n != 0 || i == 0)
-		{
-			n = n / 10;
-			i++;
-		}
-		return (i);
-	}
-	else if (n < 0 && n != -2147483648)
-	{
-		n = n * -1;
-		while (n != 0)
-		{
-			n = n / 10;
-			i++;
-		}
-		i++;
-		return (i);
-	}
-	return (11);
-}
 
 static char	*swap(char	*d)
 {
@@ -66,9 +38,11 @@ char	*ft_itoa(int n)
 {
 	int		i;
 	char	*ret;
+	int		len;
 
+	len = ft_digitcount_signed(n) + 1 + ft_is_negative(n);
 	i = 0;
-	ret = malloc((digitcount(n) + 1) * sizeof(char));
+	ret = ft_calloc(len, sizeof(char));
 	if (!ret)
 		return (0);
 	if (n < 0)
