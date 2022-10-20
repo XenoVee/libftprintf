@@ -1,47 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_next_line_utils.c                              :+:    :+:            */
+/*   ft_realloc.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/07 19:57:28 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/19 17:27:58 by rmaes         ########   odam.nl         */
+/*   Created: 2022/10/19 17:24:43 by rmaes         #+#    #+#                 */
+/*   Updated: 2022/10/19 17:41:14 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <stdlib.h>
+#include "../libft.h"
 
-char	*extend_malloc(char	*str, int size, int ext)
+char	*ft_realloc(void *ptr, size_t size)
 {
 	char	*ret;
 	int		i;
 
 	i = 0;
-	ret = ft_calloc(sizeof(char), (size + ext));
-	if (size == 0)
-		return (ret);
-	while (i < size && ret)
-	{
-		ret[i] = str[i];
-		i++;
-	}
-	free(str);
+	ret = ft_calloc(1, size);
+	if (ret == NULL)
+		exit(EXIT_FAILURE);
+	ft_memcpy(ret, ptr, size);
+	free(ptr);
 	return (ret);
-}
-
-int	read_new(int fd, char *buf, int i)
-{
-	long int	rd;
-
-	if (!buf[i])
-	{
-		rd = read(fd, buf, BUFFER_SIZE);
-		if (rd > 0)
-			buf[rd] = '\0';
-		if (rd <= 0)
-			return (-1);
-		i = 0;
-	}
-	return (i);
 }
