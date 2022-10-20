@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:42:35 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/20 16:36:04 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/20 16:39:47 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ char			*ft_ultoa(unsigned long n);
 int				ft_printf(const char *content, ...);
 int				ft_strcmp(const char *str1, const char *str2);
 char			*get_next_line(int fd);
+char			*ft_realloc(void *ptr, size_t size);
 
 #endif
