@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:41:37 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/20 18:42:58 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/20 20:16:06 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 	char	*ret;
 	int		len;
 
-	len = ft_digitcount_signed(n) + 1 + ft_is_negative(n);
+	len = ft_digitcount(n) + 1 + ft_is_negative(n);
 	i = 0;
 	ret = ft_calloc(len, sizeof(char));
 	if (!ret)
