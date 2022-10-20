@@ -6,11 +6,11 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/20 18:16:41 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/20 18:37:39 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/10/20 18:45:21 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_digitcount_signed(long int n)
+int	ft_digitcount(long int n)
 {
 	int	i;
 
