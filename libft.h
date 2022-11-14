@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:42:35 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/11/14 15:00:56 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/11/14 18:13:17 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void			*ft_realloc(void *ptr, size_t size);
 int				ft_digitcount(long int n);
 int				ft_digitcount_unsigned(unsigned long n);
 int				ft_is_negative(unsigned long n);
-void			ft_null_array(int *array, int len);
+void			ft_null_array(void *array, int len);
 int				ft_sign(int n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 14:58:38 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/11/14 15:00:25 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/11/14 17:17:23 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@ int	ft_sign(int n)
 {
 	if (n < 0)
 		return (-1);
-	return (1);
+	if (n > 0)
+		return (1);
+	return (0);
 }

@@ -6,18 +6,20 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 17:28:33 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/11/08 17:29:55 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/11/14 18:13:00 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_null_array(int *array, int len)
+void	ft_null_array(void *array, int len)
 {
 	int	i;
+	int	*p;
 
 	i = 0;
+	p = &array[0];
 	while (i < len)
 	{
-		array[i] = 0;
+		p[i] = 0;
 		i++;
 	}
 }
