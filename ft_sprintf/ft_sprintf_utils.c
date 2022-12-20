@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_realloc.c                                       :+:    :+:            */
+/*   ft_sprintf_utils.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/19 17:24:43 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/12/12 15:39:02 by rmaes         ########   odam.nl         */
+/*   Created: 2022/07/28 14:47:15 by rmaes         #+#    #+#                 */
+/*   Updated: 2022/12/12 16:53:21 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_sprintf.h"
 #include <stdlib.h>
-#include "../libft.h"
 
-void	*ft_realloc(void *ptr, size_t size)
+int	ft_partlen(const char *s)
+{
+	int	a;
+
+	a = 0;
+	while (s[a] != '%' && s[a])
+		a++;
+	return (a);
+}
+
+//returns a malloced string that is the result of appending str2 to str1.
+// frees str1
+char	*ft_realc_strjoin(char *str1, char *str2)
 {
 	char	*ret;
-	int		i;
 
-	i = 0;
-	ret = malloc(size);
-	if (!(ret == NULL))
-		ft_memcpy(ret, ptr, size);
-	free(ptr);
+	ret = ft_strjoin(str1, str2);
+	free(str1);
 	return (ret);
 }
