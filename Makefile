@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/12/21 20:51:20 by rmaes         ########   odam.nl          #
+#    Updated: 2022/12/21 21:09:45 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ all: $(OBJECTS_DIR) $(NAME)
 $(NAME): $(OBJECTS) $(PRINTF_OBJECTS) $(GNL_OBJECTS)
 	@echo "compiling: $(YELLOW)creating library$(DEFAULT)"
 	@ar -rcsu $@ $^
-	@echo "$(GREEN)$@ successfully compiled!"
+	@echo "$(GREEN)$@ successfully compiled!$(DEFAULT)"
 
 $(OBJECTS_DIR):
 	@echo "$(YELLOW)creating $@ folder$(DEFAULT)"
