@@ -6,9 +6,16 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/11/14 15:00:44 by rmaes         ########   odam.nl          #
+#    Updated: 2022/12/21 20:51:20 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
+
+#Colors
+
+DEFAULT = \033[0;39m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
 
 OBJECTS_DIR = objects/
 SOURCES_DIR = sources/
@@ -43,26 +50,38 @@ CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 NAME = libft.a
 
-all: $(NAME)
+all: $(OBJECTS_DIR) $(NAME)
 
 $(NAME): $(OBJECTS) $(PRINTF_OBJECTS) $(GNL_OBJECTS)
-	@echo archving $@
-	ar -rcsu $@ $^
+	@echo "compiling: $(YELLOW)creating library$(DEFAULT)"
+	@ar -rcsu $@ $^
+	@echo "$(GREEN)$@ successfully compiled!"
+
+$(OBJECTS_DIR):
+	@echo "$(YELLOW)creating $@ folder$(DEFAULT)"
+	@mkdir objects
 
 $(OBJECTS_DIR)%.o: $(SOURCES_DIR)%.c
+	@echo "compiling: $(YELLOW)$@$(DEFAULT)"
 	@$(CC) -c $(CFLAGS) -o $@ $^
 
 $(PRINTF_DIR)%.o: $(PRINTF_DIR)%.c
+	@echo "compiling: $(YELLOW)$@$(DEFAULT)"
 	@$(CC) -c $(CFLAGS) -o $@ $^
 
 $(GNL_DIR)%.o: $(GNL_DIR)%.c
+	@echo "compiling: $(YELLOW)$@$(DEFAULT)"
 	@$(CC) -c $(CFLAGS) -o $@ $^
 
+rmlib:
+	@echo "cleaning:  $(RED)removing $(NAME)$(DEFAULT)"
+	@rm -f $(NAME)
+
 clean:
+	@echo "cleaning:  $(RED)removing object files$(DEFAULT)"
 	@rm -f $(OBJECTS) $(GNL_OBJECTS) $(PRINTF_OBJECTS)
 
-fclean: clean
-	@rm -f $(NAME)
+fclean: clean rmlib
 
 re: fclean all
 
