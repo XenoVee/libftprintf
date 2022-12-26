@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:41:49 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/19 18:07:44 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/12/26 00:55:51 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	srctemp = src;
 	dsttemp = dst;
-	if (src == '\0' && dst == '\0')
+	if (src == NULL && dst == NULL)
 	{
 		return (0);
 	}

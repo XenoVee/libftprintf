@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rmaes <rmaes@student.codam.nl>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/17 16:42:28 by rmaes             #+#    #+#             */
-/*   Updated: 2022/06/13 17:19:44 by rmaes            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_strtrim.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/17 16:42:28 by rmaes         #+#    #+#                 */
+/*   Updated: 2022/12/26 00:57:53 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static int	trim(char const *s1, char const *set, int loc, int dir)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ret;
-	int		i;
 	int		start;
 	int		end;
 
@@ -50,7 +49,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 			return (0);
 		return (ret);
 	}
-	i = 0;
 	start = trim(s1, set, 0, 1);
 	end = trim(s1, set, ft_strlen(s1) - 1, -1);
 	if (start == -1 || end == -1)
