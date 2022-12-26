@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:41:27 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/10/18 16:38:37 by rmaes         ########   odam.nl         */
+/*   Updated: 2022/12/26 01:21:30 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	ft_atoi(const char *str)
 	int	sign;
 	int	num;
 
+	if (str == NULL)
+		return (0);
 	sign = 1;
 	num = 0;
 	while ((str[0] >= 9 && str[0] <= 13) || str[0] == 32)
