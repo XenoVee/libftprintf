@@ -13,40 +13,30 @@
 #include "../libft.h"
 #include <stdlib.h>
 
-static char	*bad_input(char const *s1, char const *s2)
-{
-	if (!s1 && !s2)
-		return (0);
-	if (s1 && !s2)
-		return (ft_substr(s1, 0, ft_strlen(s1)));
-	if (!s1 && s2)
-		return (ft_substr(s2, 0, ft_strlen(s2)));
-	return (0);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_tristrjoin(char const *s1, char const *s2, char const *s3)
 {
 	unsigned int	i;
-	unsigned int	len1;
-	unsigned int	len2;
+	unsigned int	len[3];
 	char			*str;
 
-	if (!s1 || !s2)
-		return (bad_input(s1, s2));
 	i = 0;
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	str = malloc((len1 + len2 + 1) * sizeof(char));
+	ft_null_array(len, 3);
+	len[0] = ft_strlenprot(s1);
+	len[1] = ft_strlenprot(s2);
+	len[2] = ft_strlenprot(s3);
+	str = malloc((len[0] + len[1] + len[2] + 1) * sizeof(char));
 	if (!str)
 		return (0);
-	while (i < len1 || i < len2)
+	while (i < len[0] || i < len[1] || i < len[2])
 	{
-		if (i < len1)
+		if (i < len[0])
 			str[i] = s1[i];
-		if (i < len2)
-			str[len1 + i] = s2[i];
+		if (i < len[1])
+			str[len[0] + i] = s2[i];
+		if (i < len[2])
+			str[len[0] + len[1] + i] = s3[i];
 		i++;
 	}
-	str[len1 + len2] = '\0';
+	str[len[0] + len[1] + len[2]] = '\0';
 	return (str);
 }

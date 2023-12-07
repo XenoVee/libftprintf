@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_null_array.c                                    :+:    :+:            */
+/*   ft_strlenprot.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/11/08 17:28:33 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/12/05 14:18:41 by rmaes         ########   odam.nl         */
+/*   Created: 2021/12/17 16:42:16 by rmaes         #+#    #+#                 */
+/*   Updated: 2023/12/07 13:36:45 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_null_array(void *array, int len)
-{
-	int	i;
-	int	*p;
+#include <stddef.h>
 
-	i = 0;
-	p = array;
-	while (i < len)
-	{
-		p[i] = 0;
-		i++;
-	}
+// returns a len of 0 instead of segfaulting when recieveing a null string
+size_t	ft_strlenprot(const char *s)
+{
+	int	a;
+
+	a = 0;
+	if (s)
+		while (s[a])
+			a++;
+	return (a);
 }

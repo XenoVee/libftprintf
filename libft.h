@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 16:42:35 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/11/14 18:13:17 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/12/07 13:36:17 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ int				ft_digitcount_unsigned(unsigned long n);
 int				ft_is_negative(unsigned long n);
 void			ft_null_array(void *array, int len);
 int				ft_sign(int n);
+char			*ft_tristrjoin(char const *s1, char const *s2, char const *s3);
+int				ft_strlenprot(const char *s);
 
 #endif
